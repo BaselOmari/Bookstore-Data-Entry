@@ -3,12 +3,14 @@ import urllib.request
 import json
 
 # Enter both the file name and the sheet name
-wb = openpyxl.load_workbook('TRANSLATED_FICTION.xlsx')
+file_name = "Translated_Fiction.xlsx"
+wb = openpyxl.load_workbook(file_name)
 sheet = wb.get_sheet_by_name('Sheet1')
 
 base_api_link = "https://www.googleapis.com/books/v1/volumes?q=isbn:"
 
-cellInt = 2 # Enter starting cell number, usually 2
+# Enter starting cell number, usually 2
+cellInt = 2
 while True:
     isbnCell = 'C' + str(cellInt)
     titCell = 'D' + str(cellInt)
@@ -65,7 +67,7 @@ while True:
 
     cellInt += 1
 
-wb.save(filename="ROMANTICFICTION.xlsx")
+wb.save(filename=file_name)
 
 print()
 print("Saved")
