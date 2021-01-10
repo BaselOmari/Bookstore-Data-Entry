@@ -36,7 +36,7 @@ while True:
     decoded_text = text.decode("utf-8")
     obj = json.loads(decoded_text)
 
-    # Code was put into a try and except block, as data was not usually found, returning a Key Error which break the running code
+    # Code was put into a try and except block, as data was not usually found, returning a Key Error which would break the running code
     try:
         volume_info = obj["items"][0]
 
